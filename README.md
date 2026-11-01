@@ -108,6 +108,12 @@ Open a **new** terminal tab/window and navigate to the `frontend` folder.
    npm run dev
    ```
    *The frontend will now be running on `http://localhost:5173`.*
+   - You can Run Locally --
+   
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: http://192.168.47.1:5173/   VMware Network Adap…
+  ➜  Network: http://192.168.184.1:5173/  VMware Network Adap…
+  ➜  Network: http://192.168.1.15:5173/   Wi-Fi
 
 ---
 
