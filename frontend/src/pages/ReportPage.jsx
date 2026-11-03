@@ -4,12 +4,13 @@ import { FileText, Download, ExternalLink } from 'lucide-react';
 export default function ReportPage() {
   const [loading, setLoading] = useState(false);
   const fileId = localStorage.getItem('file_id');
-
+  const url = `${API_URL}/report?file_id=${fileId}`;
   const handleOpenReport = () => {
     if (!fileId) return;
     setLoading(true);
     // Since the backend returns HTML directly, we can open it in a new tab
     const url = `http://localhost:8000/report?file_id=${fileId}`;
+    
     window.open(url, '_blank');
     setLoading(false);
   };
