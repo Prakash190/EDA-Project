@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.api.endpoints import dataset, clean, analysis, visualization, insights, report, auth
 from app.db.database import close_mongo_connection
 
+
 app = FastAPI(title="EDA-Insight-System Backend", version="1.0.0")
 
 app.add_middleware(
@@ -29,3 +30,15 @@ async def shutdown_event():
 @app.get("/")
 def root():
     return {"message": "Welcome to the EDA-Insight-System API"}
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "https://eda-project-stmd.vercel.app",
+        "http://localhost:5173",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
